@@ -17,10 +17,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
-    system \
-    system_ext \
-    vendor \
-    product 
+     system \
+     system_ext \
+     product \
+     vendor \
+     vbmeta_system \
+     vbmeta_vendor \
+     boot
 
 PRODUCT_PACKAGES += \
     update_engine \
