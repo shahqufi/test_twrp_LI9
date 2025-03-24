@@ -10,7 +10,7 @@ system_ext          /system_ext     erofs   ro  wait,slotselect,avb=vbmeta_syste
 /dev/block/by-name/metadata   /metadata   ext4    noatime,nosuid,nodev,discard  wait,check,formattable,first_stage_mount
 
 # Userdata partition (FBE & Inline Encryption)
-/dev/block/by-name/userdata   /data       f2fs    noatime,nosuid,nodev,discard,quota,resize,latemount,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption  wait,check,formattable,quota,reservedsize=128m,readahead_size_kb=512,checkpoint=fs
+/dev/block/by-name/userdata   /data       f2fs    noatime,nosuid,nodev,discard,quota,resize,latemount,fileencryption=aes-256-xts,keydirectory=/metadata/vold/metadata_encryption     wait,check,formattable,quota,reservedsize=128m,readahead_size_kb=512,checkpoint=fs
 
 # Misc partition (needed for update_engine)
 /dev/block/by-name/misc       /misc       emmc    defaults    defaults
