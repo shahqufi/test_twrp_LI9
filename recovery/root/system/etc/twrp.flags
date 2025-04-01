@@ -10,13 +10,13 @@
 /vbmeta_a        emmc    /dev/block/by-name/vbmeta_a                                         flags=display=vbmeta;slotselect;backup;flashimg
 /vbmeta_system_a emmc    /dev/block/by-name/vbmeta_system_a                                  flags=display=vbmeta_system;slotselect;backup;flashimg
 /vbmeta_vendor_a emmc    /dev/block/by-name/vbmeta_vendor_a                                  flags=display=vbmeta_vendor;slotselect;backup;flashimg
-/super         emmc    /dev/block/by-name/super                                            flags=display=super;backup;flashimg
+/super           emmc    /dev/block/by-name/super                                            flags=display=super;backup;flashimg
 
 
 # Firmware
 /dtbo_a       emmc    /dev/block/by-name/dtbo_a                                               flags=display=dtbo;slotselect;backup;flashimg
-/metadata   ext4    /dev/block/by-name/metadata                                             flags=display=metadata;backup
-/misc       emmc    /dev/block/by-name/misc                                                 flags=display=misc;backup
+/metadata   ext4      /dev/block/by-name/metadata                                             flags=display=metadata;backup
+/misc       emmc      /dev/block/by-name/misc                                                 flags=display=misc;backup
 
 
 # Sensitive Data
@@ -36,6 +36,7 @@
 
 # Flashable logical partitions
 /system_a	       emmc		/dev/block/mapper/system_a									flags=display="system";backup;flashimg
-/vendor_a	       emmc		/dev/block/mapper/vendor_a									flags=display="vendor";slotselect;backup;flashimg
+/system_ext_a      emmc    /dev/block/mapper/system_ext_a              flags=display=system_ext;slotselect;backup;flashimg
+/vendor_a	       emmc		/dev/block/mapper/vendor_a									   flags=display="vendor";slotselect;backup;flashimg
 /system_ext_a      emmc		/dev/block/mapper/system_ext_a								        flags=display="System_ext";slotselect;backup;flashimg
 /product_a         emmc             /dev/block/mapper/product_a									flags=display="Product";slotselect;backup;flashimg
