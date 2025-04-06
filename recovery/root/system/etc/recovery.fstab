@@ -13,6 +13,15 @@ vendor /vendor erofs ro wait,slotselect,avb,logical,first_stage_mount
 product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
 product /product erofs ro wait,slotselect,avb,logical,first_stage_mount
+vendor_dlkm      /vendor_dlkm      erofs      ro      wait,slotselect,avb,logical,first_stage_mount
+vendor_dlkm      /vendor_dlkm      ext4      ro      wait,slotselect,avb,logical,first_stage_mount
+
+odm_dlkm      /odm_dlkm      erofs      ro      wait,slotselect,avb,logical,first_stage_mount
+odm_dlkm      /odm_dlkm      ext4      ro      wait,slotselect,avb,logical,first_stage_mount
+
+odm      /odm      erofs      ro      wait,slotselect,avb,logical,first_stage_mount
+odm      /odm      ext4      ro      wait,slotselect,avb,logical,first_stage_mount
+
 
 
 
