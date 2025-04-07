@@ -45,7 +45,7 @@
 /tee2			emmc		/dev/block/by-name/tee2											flags=display=tee2
 
 # Flashable logical partitions
-/system_image        emmc   /dev/block/mapper/system       flags=slotselect;display="system";backup;flashimg
-/vendor_image	       emmc		/dev/block/mapper/vendor									flags=display="vendor image";slotselect;backup;flashimg
-/system_ext_image      emmc		/dev/block/mapper/system_ext								        flags=display="System_EXT image";slotselect;backup;flashimg
+/system_image          emmc            /dev/block/mapper/system                 flags=slotselect;display="system";backup;flashimg
+/vendor_image	         emmc		         /dev/block/mapper/vendor									flags=display="vendor image";slotselect;backup;flashimg
+/system_ext_image      emmc		         /dev/block/mapper/system_ext							 flags=display="System_EXT image";slotselect;backup;flashimg
 /product_image         emmc             /dev/block/mapper/product									flags=display="Product image";slotselect;backup;flashimg
