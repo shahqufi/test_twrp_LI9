@@ -4,9 +4,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/orangefox_LI9.mk
+    $(LOCAL_DIR)/twrp_LI9.mk
 
 COMMON_LUNCH_CHOICES := \
-    orangefox_LI9-user \
-    orangefox_LI9-userdebug \
-    orangefox_LI9-eng
+    twrp_LI9-user \
+    twrp_LI9-userdebug \
+    twrp_LI9-eng
