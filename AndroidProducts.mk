@@ -1,14 +1,12 @@
 #
-# Copyright (C) 2025 The Android Open Source Project
-# Copyright (C) 2025 SebaUbuntu's TWRP device tree generator
-#
+# Copyright (C) 2026 OrangeFox Recovery Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_LI9.mk
+    $(LOCAL_DIR)/orangefox_LI9.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_LI9-user \
-    twrp_LI9-userdebug \
-    twrp_LI9-eng
+    orangefox_LI9-user \
+    orangefox_LI9-userdebug \
+    orangefox_LI9-eng
