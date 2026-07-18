@@ -1,35 +1,55 @@
 #
 # Copyright (C) 2025 The Android Open Source Project
-# Copyright (C) 2025 SebaUbuntu's TWRP device tree generator
-#
 # SPDX-License-Identifier: Apache-2.0
 #
 
 LOCAL_PATH := device/tecno/LI9
 
+# -----------------------------------------------------------------------------
+# Vendor Boot
+# -----------------------------------------------------------------------------
+
 BOARD_USES_VENDOR_BOOT := true
 
-# Enable Virtual A/B OTA
-ENABLE_VIRTUAL_AB := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
+# -----------------------------------------------------------------------------
+# Virtual A/B
+# -----------------------------------------------------------------------------
 
-# A/B
+ENABLE_VIRTUAL_AB := true
+
+$(call inherit-product, \
+    $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
+
+$(call inherit-product, \
+    $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
+
+# -----------------------------------------------------------------------------
+# A/B OTA
+# -----------------------------------------------------------------------------
+
 AB_OTA_UPDATER := true
+
 AB_OTA_PARTITIONS += \
-     system \
-     system_ext \
-     product \
-     vendor \
-     vbmeta_system \
-     vbmeta_vendor \
-     boot
+    boot \
+    vendor_boot \
+    dtbo \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
+    system \
+    system_ext \
+    product \
+    vendor \
+    vendor_dlkm \
+    system_dlkm \
+    odm_dlkm
 
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier \
-    checkpoint_gc
+    checkpoint_gc \
+    otapreopt_script
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -43,57 +63,68 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_vendor=erofs \
     POSTINSTALL_OPTIONAL_vendor=true
 
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_engine_sideload \
-    update_verifier \
-    checkpoint_gc \
-    otapreopt_script
+# -----------------------------------------------------------------------------
+# Boot Control HAL
+# -----------------------------------------------------------------------------
 
-#TODO : is this enough?
-# Bootctrl
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-mtkimpl \
     android.hardware.boot@1.2-mtkimpl.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
-     bootctrl 
+    bootctrl
 
-# Fastbootd
+# -----------------------------------------------------------------------------
+# FastbootD
+# -----------------------------------------------------------------------------
+
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
-# Drm
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4
+# -----------------------------------------------------------------------------
+# Health HAL
+# -----------------------------------------------------------------------------
 
-# Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
 
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1
+# -----------------------------------------------------------------------------
+# DRM
+# -----------------------------------------------------------------------------
 
-# Additional Libraries
-TARGET_RECOVERY_DEVICE_MODULES += \
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4
+
+# -----------------------------------------------------------------------------
+# Keymaster
+# -----------------------------------------------------------------------------
+
+PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1 \
+    android.system.keystore2
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hardware.keymaster@4.1
 
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1
 
-# Keystore2
-PRODUCT_PACKAGES += \
-    android.system.keystore2
-
+# -----------------------------------------------------------------------------
 # Dynamic Partitions
+# -----------------------------------------------------------------------------
+
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# -----------------------------------------------------------------------------
 # VNDK
-PRODUCT_TARGET_VNDK_VERSION := 32
+# -----------------------------------------------------------------------------
 
-# API
-PRODUCT_SHIPPING_API_LEVEL := 32
+PRODUCT_TARGET_VNDK_VERSION := current
 
+# -----------------------------------------------------------------------------
+# API Level
+# -----------------------------------------------------------------------------
+
+PRODUCT_SHIPPING_API_LEVEL := 34
