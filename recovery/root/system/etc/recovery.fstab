@@ -63,8 +63,7 @@ system_dlkm /system_dlkm ext4 ro wait,slotselect,avb,logical,first_stage_mount
 /dev/block/by-name/lk2 /bootloader2 emmc defaults defaults
 /dev/block/by-name/para /para emmc defaults defaults
 /dev/block/by-name/misc /misc emmc defaults defaults
-/dev/block/by-name/init_boot /init_boot emmc defaults defaults
-
+/dev/block/by-name/init_boot /init_boot emmc defaults first_stage_mount,nofail,slotselect
 
 
 
@@ -113,8 +112,7 @@ system_dlkm /system_dlkm ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
 /dev/block/by-name/gz1 /gz1 emmc defaults defaults
 /dev/block/by-name/gz2 /gz2 emmc defaults defaults
-/dev/block/by-name/vendor_boot /vendor_boot emmc defaults defaults
-
+/dev/block/by-name/vendor_boot /vendor_boot emmc defaults first_stage_mount,nofail,slotselect
 /dev/block/by-name/spmfw /spmfw emmc defaults defaults
 
 
