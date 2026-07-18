@@ -54,6 +54,8 @@ TARGET_BOARD_PLATFORM := mt6833
 TARGET_NO_KERNEL := true
 
 BOARD_BOOT_HEADER_VERSION := 4
+BOARD_USES_VENDOR_BOOT := true
+BOARD_USES_INIT_BOOT := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
@@ -104,7 +106,10 @@ BOARD_MTK_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system \
     system_ext \
     product \
-    vendor
+    vendor \
+    vendor_dlkm \
+    system_dlkm \
+    odm_dlkm
 
 BOARD_MTK_DYNAMIC_PARTITIONS_SIZE := 9122611200
 
@@ -178,12 +183,7 @@ TW_FORCE_KEYMASTER_VER := true
 # Android Version
 # -----------------------------------------------------------------------------
 
-PLATFORM_VERSION := 15
-PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
-
-PLATFORM_SECURITY_PATCH := 2026-05-01
-VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
-BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+PRODUCT_SHIPPING_API_LEVEL := 35
 
 # -----------------------------------------------------------------------------
 # AVB
@@ -193,12 +193,6 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
 BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-
-BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
-
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # -----------------------------------------------------------------------------
 # Display
@@ -231,9 +225,6 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LPTOOLS := true
-
-TW_EXCLUDE_LPDUMP := true
-TW_EXCLUDE_APEX := true
 
 TW_HAS_NO_RECOVERY_PARTITION := true
 
@@ -270,7 +261,18 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_LI9
 TW_LOAD_VENDOR_BOOT_MODULES := true
 
 # -----------------------------------------------------------------------------
-# Version
+# OrangeFox
 # -----------------------------------------------------------------------------
 
-TW_DEVICE_VERSION := Shah_qufi
+FOX_MAINTAINER_PATCH_VERSION := Shah_qufi
+
+FOX_USE_BASH_SHELL := 1
+FOX_DELETE_AROMAFM := 1
+
+FOX_USE_UPDATED_MAGISKBOOT := 1
+
+OF_FLASHLIGHT_ENABLE := 1
+
+OF_WIPE_METADATA_AFTER_DATAFORMAT := 1
+
+OF_UNMOUNT_SDCARDS_BEFORE_REBOOT := 1
