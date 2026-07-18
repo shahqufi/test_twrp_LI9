@@ -31,6 +31,7 @@ AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS += \
     boot \
+    init_boot \
     vendor_boot \
     dtbo \
     vbmeta \
@@ -127,4 +128,15 @@ PRODUCT_TARGET_VNDK_VERSION := current
 # API Level
 # -----------------------------------------------------------------------------
 
-PRODUCT_SHIPPING_API_LEVEL := 34
+PRODUCT_SHIPPING_API_LEVEL := 35
+
+# -----------------------------------------------------------------------------
+# OrangeFox
+# -----------------------------------------------------------------------------
+
+PRODUCT_PACKAGES += \
+    OrangeFox
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.orangefox.boot.flash.enabled=1 \
+    ro.orangefox.fastbootd.enabled=1
