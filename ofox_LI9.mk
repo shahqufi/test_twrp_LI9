@@ -26,7 +26,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # OrangeFox Common
 # -----------------------------------------------------------------------------
 
-$(call inherit-product, vendor/recovery/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # -----------------------------------------------------------------------------
 # Device
