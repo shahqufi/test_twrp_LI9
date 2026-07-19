@@ -87,30 +87,24 @@ PRODUCT_PACKAGES += \
 # Health HAL
 # -----------------------------------------------------------------------------
 
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service
+#PRODUCT_PACKAGES += \
+#    android.hardware.health@2.1-impl \
+#    android.hardware.health@2.1-service
 
-# -----------------------------------------------------------------------------
-# DRM
-# -----------------------------------------------------------------------------
-
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4
 
 # -----------------------------------------------------------------------------
 # Keymaster
 # -----------------------------------------------------------------------------
 
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1 \
-    android.system.keystore2
+#PRODUCT_PACKAGES += \
+#    android.hardware.keymaster@4.1 \
+#    android.system.keystore2
 
-TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hardware.keymaster@4.1
+#TARGET_RECOVERY_DEVICE_MODULES += \
+#    android.hardware.keymaster@4.1
 
-RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1
+#RECOVERY_LIBRARY_SOURCE_FILES += \
+#    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1
 
 # -----------------------------------------------------------------------------
 # Dynamic Partitions
