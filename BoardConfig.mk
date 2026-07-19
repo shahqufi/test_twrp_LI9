@@ -1,6 +1,3 @@
-Cleaned BoardConfig.mk (based on your current tree)
-
-Tecno Pova 6 Pro (LI9)
 
 DEVICE_PATH := device/tecno/li9
 
