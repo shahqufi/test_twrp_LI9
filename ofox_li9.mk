@@ -32,14 +32,14 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Device
 # -----------------------------------------------------------------------------
 
-$(call inherit-product, device/tecno/LI9/device.mk)
+$(call inherit-product, device/tecno/li9/device.mk)
 
 # -----------------------------------------------------------------------------
 # Product
 # -----------------------------------------------------------------------------
 
-PRODUCT_DEVICE := LI9
-PRODUCT_NAME := ofox_LI9
+PRODUCT_DEVICE := li9
+PRODUCT_NAME := ofox_li9
 PRODUCT_BRAND := TECNO
 PRODUCT_MODEL := TECNO LI9
 PRODUCT_MANUFACTURER := TECNO
