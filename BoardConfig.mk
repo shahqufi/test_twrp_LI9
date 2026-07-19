@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/tecno/LI9
+DEVICE_PATH := device/tecno/li9
 
 # -----------------------------------------------------------------------------
 # Build
@@ -102,13 +102,6 @@ BOARD_SUPER_PARTITION_SIZE := 9126805504
 
 BOARD_SUPER_PARTITION_GROUPS := mtk_dynamic_partitions
 
-#
-# Copyright (C) 2024 The Android Open Source Project
-# SPDX-License-Identifier: Apache-2.0
-#
-
-DEVICE_PATH := device/tecno/LI9
-
 # -----------------------------------------------------------------------------
 # Build
 # -----------------------------------------------------------------------------
@@ -143,7 +136,7 @@ TARGET_USES_64_BIT_BINDER := true
 # -----------------------------------------------------------------------------
 
 TARGET_BOOTLOADER_BOARD_NAME := LI9
-TARGET_OTA_ASSERT_DEVICE := LI9,TECNO-LI9
+TARGET_OTA_ASSERT_DEVICE := LI9,li9,TECNO-LI9
 
 # -----------------------------------------------------------------------------
 # Platform
@@ -337,8 +330,6 @@ TW_INCLUDE_FASTBOOTD := true
 # -----------------------------------------------------------------------------
 
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-
-TW_USB_STORAGE := true
 
 TW_HAS_MTP := true
 TW_MTP_DEVICE := "/dev/usb-ffs/mtp"
