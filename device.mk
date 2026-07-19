@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/tecno/LI9
+LOCAL_PATH := device/tecno/li9
 
 # -----------------------------------------------------------------------------
 # Vendor Boot
