@@ -352,7 +352,6 @@ TW_LOAD_VENDOR_BOOT_MODULES := true
 # OrangeFox
 # -----------------------------------------------------------------------------
 
-FOX_MAINTAINER_PATCH_VERSION := Shah_qufi
 
 FOX_USE_BASH_SHELL := 1
 FOX_DELETE_AROMAFM := 1
@@ -515,8 +514,6 @@ TW_LOAD_VENDOR_BOOT_MODULES := true
 # OrangeFox
 # -----------------------------------------------------------------------------
 
-FOX_MAINTAINER_PATCH_VERSION := Shah_qufi
-
 FOX_USE_BASH_SHELL := 1
 FOX_DELETE_AROMAFM := 1
 
@@ -529,3 +526,5 @@ OF_WIPE_METADATA_AFTER_DATAFORMAT := 1
 OF_UNMOUNT_SDCARDS_BEFORE_REBOOT := 1
 
 OF_NO_SPLASH_CHANGE := 1
+
+OF_MAINTAINER := Bad_ASS
