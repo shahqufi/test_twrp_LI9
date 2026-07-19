@@ -55,9 +55,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.fuse.passthrough.enable=true \
     ro.fastbootd.available=true \
     ro.orangefox.boot.flash.enabled=1
-
-# -----------------------------------------------------------------------------
-# Shipping API
-# -----------------------------------------------------------------------------
-
-PRODUCT_SHIPPING_API_LEVEL := 35
