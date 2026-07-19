@@ -15,7 +15,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/ofox_LI9.mk
+    $(LOCAL_DIR)/ofox_li9.mk
 
 COMMON_LUNCH_CHOICES := \
     ofox_li9-eng \
