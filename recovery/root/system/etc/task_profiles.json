@@ -541,19 +541,6 @@
     },
 
     {
-      "Name": "animBoostPolicy",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpuset",
-            "Path": "anibooster"
-          }
-        }
-      ]
-    },
-    {
       "Name": "PerfBoost",
       "Actions": [
         {
@@ -635,6 +622,19 @@
           }
         }
       ]
+    },
+	{
+      "Name": "animBoostPolicy",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpuset",
+            "Path": "anibooster"
+          }
+        }
+      ]
     }
   ],
 
@@ -692,10 +692,6 @@
       "Profiles": [ "ServiceCapacityRestricted", "TimerSlackNormal" ]
     },
     {
-      "Name": "CPUSET_SP_ANIMBOOST",
-      "Profiles": [ "animBoostPolicy", "TimerSlackNormal" ]
-    },
-    {
       "Name": "Dex2OatBootComplete",
       "Profiles": [ "Dex2oatPerformance", "LowIoPriority", "TimerSlackHigh" ]
     },
@@ -706,6 +702,10 @@
     {
       "Name": "OtaProfiles",
       "Profiles": [ "ServiceCapacityLow", "LowIoPriority", "HighEnergySaving" ]
+    },
+	{
+      "Name": "CPUSET_SP_ANIMBOOST",
+      "Profiles": [ "animBoostPolicy", "TimerSlackNormal" ]
     }
   ]
 }

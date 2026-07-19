@@ -1,0 +1,10 @@
+<!--
+    Input:
+        vendor/transsion/hardware/interfaces/security/hap/aidl/default/vendor.transsion.hardware.security.hap.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>vendor.transsion.hardware.security.hap</name>
+        <fqname>IHap/default</fqname>
+    </hal>
+</manifest>
