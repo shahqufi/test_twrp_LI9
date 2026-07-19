@@ -1,6 +1,6 @@
 import /tee.rc
 import /trustonic.rc
-import /init.custom.rc
+#import /init.custom.rc
 
 # Set SELinux to Permissive
 on early-init
