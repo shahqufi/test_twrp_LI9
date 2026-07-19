@@ -16,3 +16,7 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/ofox_LI9.mk
+
+COMMON_LUNCH_CHOICES := \
+    ofox_li9-eng \
+    ofox_li9-userdebug
