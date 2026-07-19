@@ -43,16 +43,16 @@ BOARD_PAGE_SIZE := 4096
 BOARD_VENDOR_CMDLINE := bootopt=64S3,32N2,64N2 
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 
-BOARD_MKBOOTIMG_ARGS +=
-–header_version $(BOARD_BOOT_HEADER_VERSION)
-–pagesize $(BOARD_PAGE_SIZE)
-–board “”
-–kernel_offset $(BOARD_KERNEL_OFFSET)
-–ramdisk_offset $(BOARD_RAMDISK_OFFSET)
-–tags_offset $(BOARD_TAGS_OFFSET)
-–dtb_offset $(BOARD_DTB_OFFSET) \
-    --vendor_cmdline "$(BOARD_VENDOR_CMDLINE)”
-–dtb $(TARGET_PREBUILT_DTB)
+BOARD_MKBOOTIMG_ARGS += \
+    --header_version $(BOARD_BOOT_HEADER_VERSION) \
+    --pagesize $(BOARD_PAGE_SIZE) \
+    --board "" \
+    --kernel_offset $(BOARD_KERNEL_OFFSET) \
+    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+    --tags_offset $(BOARD_TAGS_OFFSET) \
+    --dtb_offset $(BOARD_DTB_OFFSET) \
+    --vendor_cmdline "$(BOARD_VENDOR_CMDLINE)" \
+    --dtb $(TARGET_PREBUILT_DTB)
 
 BOARD_USES_MTK_HARDWARE := true
 
@@ -63,13 +63,14 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 BOARD_SUPER_PARTITION_SIZE := 9126805504 
 BOARD_SUPER_PARTITION_GROUPS := mtk_dynamic_partitions 
-BOARD_MTK_DYNAMIC_PARTITIONS_PARTITION_LIST :=
-system
-vendor
-vendor_dlkm
-product
-system_ext
-odm 
+BOARD_MTK_DYNAMIC_PARTITIONS_PARTITION_LIST := \
+    system \
+    system_dlkm \
+    vendor \
+    vendor_dlkm \
+    product \
+    system_ext \
+    odm
 
 BOARD_MTK_DYNAMIC_PARTITIONS_SIZE := 9122611200
 
@@ -139,11 +140,13 @@ TW_INCLUDE_LIBUSB := true
 
 TARGET_INIT_VENDOR_LIB := libinit_LI9 
 TARGET_RECOVERY_DEVICE_MODULES := libinit_LI9 
-TW_LOAD_VENDOR_BOOT_MODULES := true
+#TODO 
+TW_LOAD_VENDOR_BOOT_MODULES := false
 
 FOX_USE_BASH_SHELL := 1 
 FOX_DELETE_AROMAFM := 1
 FOX_USE_UPDATED_MAGISKBOOT := 1 
+TW_SKIP_ADDITIONAL_FSTAB := true
 OF_FLASHLIGHT_ENABLE := 1
 OF_WIPE_METADATA_AFTER_DATAFORMAT := 1 
 OF_UNMOUNT_SDCARDS_BEFORE_REBOOT := 1 
