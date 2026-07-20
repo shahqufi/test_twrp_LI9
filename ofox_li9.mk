@@ -8,7 +8,6 @@
 # -----------------------------------------------------------------------------
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # -----------------------------------------------------------------------------
 # GSI Keys
@@ -52,6 +51,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-tecno
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.twrp.vendor_boot=true \
-    persist.sys.fuse.passthrough.enable=true \
     ro.fastbootd.available=true \
     ro.orangefox.boot.flash.enabled=1

@@ -29,6 +29,5 @@ void vendor_load_properties()
         property_override(string("ro.product.") + prop + string("device"), "LI9");
         property_override(string("ro.product.") + prop + string("model"), "LI9");
         property_override(string("ro.product.") + prop + string("marketname"), "Tecno Pova 6 Pro");
-        property_override(string("ro.product.system.") + prop + string("device"), "Tecno Pova 6 Pro");
-    }
+        property_override("ro.product.system.device", "LI9"); 
 }
