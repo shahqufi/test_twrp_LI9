@@ -56,7 +56,7 @@ export LC_ALL="C"
 # Patches
 RET=0
 cd bootable/recovery
-git apply ../../device/tecno/LI9/patches/0001-Change-haptics-activation-file-path.patch > /dev/null 2>&1 || RET=$?
+git apply ../../device/tecno/li9/patches/0001-Change-haptics-activation-file-path.patch > /dev/null 2>&1 || RET=$?
 cd ../../
 if [ $RET -ne 0 ];then
     echo "ERROR: Patch is not applied! Maybe it's already patched?"
